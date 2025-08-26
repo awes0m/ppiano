@@ -213,20 +213,27 @@ class _TitleBar extends StatelessWidget {
         children: [
           Image.asset('assets/logo.png', width: 60, height: 60),
           const SizedBox(width: 12),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  ' 🔼Up/Down🔽 Arrows Change Left Hand ✌️',
-                  style: TextStyle(fontSize: 12),
-                ),
-                SizedBox(height: 2),
-                Text(
-                  '◀Left/Right▶ Arrows Change Right Hand ✌️',
-                  style: TextStyle(fontSize: 12),
-                ),
-              ],
+              children: (kIsWeb || (!Platform.isAndroid && !Platform.isIOS))
+                  ? [
+                      Text(
+                        ' 🔼Up/Down🔽 Arrows Change Left Hand ✌️',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      SizedBox(height: 2),
+                      Text(
+                        '◀Left/Right▶ Arrows Change Right Hand ✌️',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    ]
+                  : [
+                      Text(
+                        'Use the piano keys below! 🎹',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    ],
             ),
           ),
         ],
