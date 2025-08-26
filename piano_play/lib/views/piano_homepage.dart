@@ -2,6 +2,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'dart:io' show Platform;
 import 'package:piano_play/core/utils.dart';
 
 import '../core/piano_constants.dart';
@@ -159,7 +161,7 @@ class _PianoHomePageState extends State<PianoHomePage> {
           title: TextButton(
             child: Text(
               'Programmable Piano! ❤️ awes0m',
-              style: TextStyle(fontSize: 23, fontWeight: FontWeight.w400),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
             ),
             onPressed: () => launchAPPUrl("https://awes0m.github.io/"),
           ),
@@ -183,12 +185,14 @@ class _PianoHomePageState extends State<PianoHomePage> {
                 },
               ),
             ),
-            _HandsBar(
-              leftOct: leftOct,
-              rightOct: rightOct,
-              highlightLeft: _highlightLeft,
-              highlightRight: _highlightRight,
-            ),
+            // Only show HandsBar on web and desktop platforms (hide on Android/mobile)
+            if (kIsWeb || (!Platform.isAndroid && !Platform.isIOS))
+              _HandsBar(
+                leftOct: leftOct,
+                rightOct: rightOct,
+                highlightLeft: _highlightLeft,
+                highlightRight: _highlightRight,
+              ),
           ],
         ),
       ),
@@ -203,10 +207,11 @@ class _TitleBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/logo.png', width: 120, height: 80),
+          Image.asset('assets/logo.png', width: 60, height: 60),
           const SizedBox(width: 12),
           const Expanded(
             child: Column(
@@ -214,12 +219,12 @@ class _TitleBar extends StatelessWidget {
               children: [
                 Text(
                   ' 🔼Up/Down🔽 Arrows Change Left Hand ✌️',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 12),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: 2),
                 Text(
                   '◀Left/Right▶ Arrows Change Right Hand ✌️',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 12),
                 ),
               ],
             ),

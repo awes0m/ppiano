@@ -2,7 +2,13 @@
 
 Programmable piano built with Flutter. Play notes via on-screen keys or your computer keyboard with left/right hand key bundles. Octaves can be shifted with arrow keys to access all 52 keys using the keyboard.
 
+DOWNLOAD Here -\
+
+* [ANDROID DOWNLOAD](piano_play\Built\app-release.apk)
+* [WINDOWS DOWNLOAD](https://github.com/awes0m/pyiano/raw/main/Pyiano__%20The_Python_Piano_Windows_x86x64.zip)
+
 ## Features
+
 - **Two-hand keyboard mapping**: Left-hand (Z,S,X,D,C,V,G,B,H,N,J,M) and Right-hand (R,5,T,6,Y,U,8,I,9,O,0,P).
 - **Octave shifting**:
   - **Up/Down arrows**: Shift the Left Hand octave.
@@ -14,6 +20,7 @@ Programmable piano built with Flutter. Play notes via on-screen keys or your com
 - **Mouse and Keyboard input**: Click keys or press mapped keyboard keys to play notes.
 
 ## Instructions
+
 1. Click the on-screen piano keys to play notes, or use the keyboard mappings below.
 2. Use the arrow keys to change octaves:
    - Up/Down arrows: change the Left Hand octave (Z,S,X,D,C,V,G,B,H,N,J,M).
@@ -21,6 +28,7 @@ Programmable piano built with Flutter. Play notes via on-screen keys or your com
 3. Watch the hand block highlight to know which side you’re adjusting.
 
 ## Keyboard Mappings
+
 - **Left Hand**: `Z S X D C V G B H N J M`
 - **Right Hand**: `R 5 T 6 Y U 8 I 9 O 0 P`
 

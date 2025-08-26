@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "awes0m.github.io.piano_play"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
