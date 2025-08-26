@@ -1,11 +1,15 @@
-# piano_play
+# [piano_play→](https://awes0m.github.io/ppiano/)
 
 Programmable piano built with Flutter. Play notes via on-screen keys or your computer keyboard with left/right hand key bundles. Octaves can be shifted with arrow keys to access all 52 keys using the keyboard.
 
-DOWNLOAD Here -\
+DOWNLOAD Here -
 
-* [ANDROID DOWNLOAD](piano_play\Built\app-release.apk)
+* [ANDROID DOWNLOAD](https://github.com/awes0m/ppiano/blob/main/piano_play/Built/app-release.apk)
 * [WINDOWS DOWNLOAD](https://github.com/awes0m/pyiano/raw/main/Pyiano__%20The_Python_Piano_Windows_x86x64.zip)
+
+## ScreenShot
+
+![Pyano Screenshot](ppiano.jpg "Optional title text")
 
 ## Features
 
