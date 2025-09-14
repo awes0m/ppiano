@@ -101,8 +101,19 @@ class _PianoHomePageState extends State<PianoHomePage> {
   }
 
   // Handle RawKeyboard for desktop/web
-  void _onKey(RawKeyEvent e) {
-    if (e is RawKeyDownEvent) {
+  /// Handle RawKeyboard events for desktop/web.
+  ///
+  /// Arrow keys for octave changes + selection highlight.
+  /// The left and right arrow keys change the right octave, and set
+  /// the selection highlight to the right octave.
+  /// The up and down arrow keys change the left octave, and set the
+  /// selection highlight to the left octave.
+  ///
+  /// Character events are mapped to white or black key labels,
+  /// and if the label is valid, play the note and mark it active.
+  ///
+  void _onKey(KeyEvent e) {
+    if (e is KeyDownEvent) {
       // Arrow keys for octave changes + selection highlight
       if (e.logicalKey == LogicalKeyboardKey.arrowRight && rightOct < 8) {
         setState(() {
@@ -152,9 +163,9 @@ class _PianoHomePageState extends State<PianoHomePage> {
       if (focusNode.canRequestFocus) focusNode.requestFocus();
     });
 
-    return RawKeyboardListener(
+    return KeyboardListener(
       focusNode: focusNode,
-      onKey: _onKey,
+      onKeyEvent: _onKey,
       child: Scaffold(
         backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
@@ -285,7 +296,7 @@ class _HandsBar extends StatelessWidget {
           boxShadow: highlighted
               ? [
                   BoxShadow(
-                    color: Colors.amber.withOpacity(0.6),
+                    color: Colors.amber.withValues(alpha: .6),
                     blurRadius: 10,
                     spreadRadius: 2,
                   ),

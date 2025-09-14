@@ -6,7 +6,7 @@ import 'views/piano_homepage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Set orientation to landscape only on Android
   if (!kIsWeb && Platform.isAndroid) {
     await SystemChrome.setPreferredOrientations([
@@ -14,7 +14,7 @@ void main() async {
       DeviceOrientation.landscapeRight,
     ]);
   }
-  
+
   runApp(const PianoApp());
 }
 
@@ -26,8 +26,12 @@ class PianoApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Programable Piano ❤️ awes()m',
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        fontFamily: 'Terserah',
+        fontFamilyFallback: ['Terserah', 'helvetica'],
+        useMaterial3: true,
       ),
       home: const PianoHomePage(),
     );
