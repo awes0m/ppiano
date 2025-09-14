@@ -12,11 +12,27 @@ dependencies:
   cupertino_icons: ^1.0.8
   audioplayers: ^6.1.0
   url_launcher: ^6.3.2
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android:
+    generate: true
+  ios:
+    generate: true
+    remove_alpha_ios: false # optional, defaults to false
+  image_path: "assets/logo.png"
+  web:
+    generate: true
+  windows:
+    generate: true
+    icon_size: 48 # min:48, max:256, default: 48
+
 
 flutter:
   uses-material-design: true
